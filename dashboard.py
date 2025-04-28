@@ -135,9 +135,9 @@ save_goal(current_goal_data)
 
 st.title("🏃 AI Running Coach Dashboard")
 
-# Read access token
-with open("access_token.txt", "r") as f:
-    access_token = f.read().strip()
+# Read access token from Streamlit secrets
+access_token = st.secrets["access_token"]
+
 
 # Fetch and prepare runs
 activities = fetch_activities(access_token)
